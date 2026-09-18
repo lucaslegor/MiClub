@@ -186,6 +186,40 @@ fases (reglas baratas primero, LLM solo sobre una shortlist).
 
 ---
 
+## AID-006 · Revisión del stack (D6) y estructura inicial del proyecto
+
+**Fecha:** 2026-09-18 · **Responsable:** Lucas
+
+**Problema abordado**
+Dejar preparada la estructura inicial de carpetas de MiClub (modular monolith
+organizado por dominio) para empezar a codear. Al hacerlo surgió que el stack pedido
+—React + Vite + Node/Express + Prisma + PostgreSQL, con split `frontend/` + `backend/`—
+contradecía la decisión D6 ya cerrada (Next.js + Vercel + Supabase).
+
+**Prompt / Herramienta**
+Claude Opus 4.8 vía Claude Code. Pedido de generar únicamente el esqueleto de carpetas
+y archivos base (sin implementar negocio, endpoints, Prisma completo, auth ni pagos).
+
+**Salida de la IA**
+Detectó el conflicto con D6 y frenó antes de crear archivos para pedir decisión
+explícita en lugar de pisar la decisión documentada en silencio. Una vez confirmado el
+cambio, generó: `backend/` (modular monolith con `modules/` por dominio,
+`infrastructure/`, `shared/`, `config/`, `app.ts`/`server.ts`, `prisma/schema.prisma`
+sin modelos, config base) y `frontend/` (React + Vite, `features/` + `layouts/` de los
+tres contextos Platform/Organization/Portal + `shared/`), más `docs/architecture/`.
+
+**Validación y corrección humana**
+- **Aceptado:** el cambio de stack a Vite + Express + Prisma y la estructura por
+  dominio. La separación FeePlan / Charge / Payment y platform / subscriptions quedó
+  reflejada como módulos independientes, en línea con las reglas del proyecto.
+- **Corregido:** _(a completar por una persona del equipo)_ — revisar que el
+  `.gitignore` heredado (con líneas de Next/Vercel/Supabase, ya inertes) y el resto de
+  docs 01–10 no queden inconsistentes con el nuevo stack.
+- **Descartado:** mantener D6 sobre Next.js/Supabase y la opción de crear la estructura
+  sin registrar el cambio en los docs.
+
+---
+
 ## Plantilla para nuevas entradas
 
 ```markdown

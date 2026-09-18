@@ -1,0 +1,14 @@
+{
+  "name": "miclub-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Frontend de MiClub SaaS — React + Vite + TypeScript + React Router.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
