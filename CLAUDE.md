@@ -15,8 +15,10 @@ Decidido hasta ahora:
 - **D1 ✅ (2026-08-25):** la plata cae en la **cuenta de Mercado Pago de cada club**,
   conectada por OAuth. No custodiamos fondos de terceros. Ver [doc 04](docs/04-pagos-y-mercadopago.md).
 - **D3 🟠 en curso:** hay contactos de clubes, ninguno confirmado. Guion en el [doc 08](docs/08-descubrimiento-club.md).
-- **D6 ✅ (2026-08-25):** stack cerrado — **Next.js + Vercel + Supabase**. Matriz
-  justificada y alternativas descartadas en el [doc 05](docs/05-arquitectura.md).
+- **D6 🔄 revisado (2026-09-18):** stack cambiado a **React + Vite + Node/Express +
+  Prisma + PostgreSQL**, con separación `frontend/` + `backend/` (modular monolith).
+  Revierte el cierre original (Next.js + Vercel + Supabase). Ver la nota de revisión
+  en el [doc 05](docs/05-arquitectura.md) y el registro en [AI-DECISIONS.md](AI-DECISIONS.md) (AID-006).
 - **D12 ✅ (2026-08-25):** la IA del producto son el **importador inteligente de
   padrón** y la **conciliación semántica de pagos**. Ver [doc 09](docs/09-ia-en-el-producto.md).
 

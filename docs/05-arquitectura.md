@@ -84,6 +84,14 @@ Es **RLS + pooling de conexiones**. Los tres pueden filtrar datos entre clubes s
 contexto de tenant se setea mal o se reusa una conexión sucia. Presupuestá tiempo
 para resolver eso bien, sea cual sea la elección.
 
+> **⚠️ Revisión (2026-09-18) — D6 cambiado.** La decisión original de esta sección
+> (Next.js + Vercel + Supabase) fue revertida. El stack vigente es **React + Vite +
+> TypeScript** en el frontend y **Node.js + Express + Prisma + PostgreSQL** en el
+> backend, organizados como **modular monolith** con separación `frontend/` +
+> `backend/`. La multi-tenancy sigue siendo base compartida con `club_id` + RLS en
+> Postgres. El texto de abajo se conserva como registro histórico de la evaluación
+> original. Trazabilidad del cambio en [AI-DECISIONS.md](../AI-DECISIONS.md) (AID-006).
+
 ### Decisión (2026-08-25): Next.js + Vercel + Supabase
 
 Se eligió la **Opción 1**. El criterio decisivo no fue la ergonomía de desarrollo
