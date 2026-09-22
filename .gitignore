@@ -4,25 +4,15 @@ node_modules/
 .pnp.*
 
 # build
-.next/
 out/
 build/
 dist/
 *.tsbuildinfo
-next-env.d.ts
 
 # entorno
 .env
 .env*.local
 !.env.example
-
-# vercel
-.vercel
-
-# supabase
-.branches
-.temp
-supabase/.temp/
 
 # tests
 coverage/
