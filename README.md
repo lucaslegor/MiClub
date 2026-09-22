@@ -44,17 +44,22 @@ Detalle en [docs/09-ia-en-el-producto.md](docs/09-ia-en-el-producto.md).
 
 | Componente | Elección |
 |---|---|
-| Frontend | Next.js (App Router) + TypeScript en Vercel |
-| Backend / API | Route Handlers + Vercel Functions (serverless) |
-| Persistencia | Supabase Postgres, con Row Level Security |
-| Auth | Supabase Auth |
-| Jobs | Cola en Postgres + Vercel Cron |
+| Frontend | React + Vite + TypeScript |
+| Backend / API | Node.js + Express |
+| ORM | Prisma |
+| Base de datos | PostgreSQL, con Row Level Security |
+| Arquitectura | Modular monolith, `frontend/` + `backend/` separados |
+| Auth | Por definir con el nuevo stack |
+| Jobs | Por definir con el nuevo stack |
 | IA | Claude API con salida estructurada |
 | Pagos | Mercado Pago en modo marketplace (OAuth) |
 | Observabilidad | Sentry + logs estructurados por `club_id` |
 
-La justificación de cada componente, con alternativas evaluadas y descartadas, está en
-[docs/05-arquitectura.md](docs/05-arquitectura.md).
+Stack revisado (D6) el 2026-09-18; reemplaza la decisión original (Next.js + Vercel +
+Supabase). La justificación de cada componente, con alternativas evaluadas y
+descartadas, y el registro de la revisión, están en
+[docs/05-arquitectura.md](docs/05-arquitectura.md) y en
+[AI-DECISIONS.md](AI-DECISIONS.md) (AID-006).
 
 ## Documentación
 
