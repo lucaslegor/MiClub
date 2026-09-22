@@ -8,7 +8,7 @@ Es además el **Trabajo Práctico Integrador** de *Ingeniería de Software en la
 cronograma están en el [doc 10](docs/10-entrega-academica.md); no son opcionales y
 condicionan el alcance.
 
-**Estado: Fase 0 — definición. Todavía no hay código.**
+**Estado: bootstrap técnico ejecutable de frontend y backend. Todavía sin funcionalidades de negocio.**
 
 Decidido hasta ahora:
 
