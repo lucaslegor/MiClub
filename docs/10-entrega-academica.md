@@ -41,7 +41,8 @@ alcance. Ver el recorte asumido al final del [doc 03](03-mvp.md).
 Lo que tiene que estar funcionando, no descrito:
 
 - [ ] Diagrama de arquitectura cloud detallado (componentes, flujos, límites de tenant)
-- [ ] Proyecto Supabase y proyecto Vercel creados y conectados
+- [ ] Base de datos PostgreSQL y entornos de despliegue del stack vigente
+      (frontend React + Vite, backend Node.js + Express) creados y conectados
 - [ ] Repositorio propio, con **actividad distribuida entre los integrantes**
 - [ ] Schema inicial migrado: clubes, usuarios, socios, cuentas, categorías, precios
 - [ ] RLS activo **con test de aislamiento multi-tenant corriendo en CI**
@@ -175,7 +176,9 @@ GitHub Actions, en cada push y cada PR:
    del club A y espera cero filas. Bloqueante.
 5. Build
 
-En PR: preview deployment de Vercel. En merge a `main`: despliegue a producción.
+En PR: validaciones automáticas (lint, typecheck, tests, build). En merge a `main`:
+despliegue a producción. La plataforma de hosting para el stack vigente
+(frontend/backend separados) todavía no está definida — ver [doc 06](06-decisiones-abiertas.md).
 
 Migraciones versionadas en el repo y aplicadas por el pipeline. Nunca a mano contra
 la base de producción.
@@ -203,7 +206,7 @@ Preguntas probables y dónde está la respuesta:
 
 | Pregunta | Respuesta en |
 |---|---|
-| ¿Por qué Supabase y no RDS? ¿Por qué Vercel y no Lambda? | [05](05-arquitectura.md), sección Stack |
+| ¿Por qué se cambió de Next.js + Vercel + Supabase a React + Vite + Node/Express + Prisma? ¿Por qué no AWS (Lambda/RDS/Cognito)? | [05](05-arquitectura.md), sección Stack (revisión D6); [AI-DECISIONS.md](../AI-DECISIONS.md) (AID-006) |
 | ¿Cómo garantizan que un club no vea datos de otro? | [05](05-arquitectura.md), RLS + test en CI |
 | ¿Qué pasa si Mercado Pago no envía el webhook? | [04](04-pagos-y-mercadopago.md), reconciliación |
 | ¿Por qué no guardan el saldo del socio en una columna? | [02](02-glosario-y-dominio.md), el ledger |

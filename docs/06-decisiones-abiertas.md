@@ -85,11 +85,16 @@ después de validar el cobro simple (recomendado) · más adelante.
 
 Next.js + Vercel + Supabase vs. AWS (Lambda/RDS/Cognito) vs. Rails o Django en contenedores.
 
-**Estado: ✅ DECIDIDA (2026-08-25) — Next.js (App Router) + TypeScript en Vercel,
-con Supabase Postgres, Auth y Storage.** Se eligió por cobertura completa de la matriz
-de componentes del TPI con servicios gestionados, aceptando el costo conocido de
-escribir el CRUD administrativo a mano. Comparativo completo, matriz justificada y
-alternativas descartadas en el [doc 05](05-arquitectura.md).
+**Estado: 🔄 REVISADA (2026-09-18).** La decisión original (2026-08-25) fue
+**Next.js (App Router) + TypeScript en Vercel, con Supabase Postgres, Auth y
+Storage**, elegida por cobertura completa de la matriz de componentes del TPI con
+servicios gestionados, aceptando el costo conocido de escribir el CRUD
+administrativo a mano. Esa decisión fue revertida: el **stack vigente** es
+**React + Vite + TypeScript** (frontend) y **Node.js + Express + Prisma +
+PostgreSQL** (backend), como modular monolith con separación `frontend/` +
+`backend/`. Comparativo completo, matriz justificada y alternativas descartadas de
+la decisión original en el [doc 05](05-arquitectura.md); registro del cambio en
+[AI-DECISIONS.md](../AI-DECISIONS.md) (AID-006).
 
 ---
 

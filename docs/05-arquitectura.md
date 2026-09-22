@@ -129,6 +129,13 @@ escalado y despliegue, lo que choca con el pilar de servicios gestionados del TP
 
 ## Arquitectura cloud-native
 
+> **⚠️ Nota:** esta sección describe el modelo cloud-native tal como se razonó junto
+> a la decisión original (2026-08-25). Las menciones a servicios puntuales de ese
+> stack (serverless de Vercel, backups de Supabase) son parte de ese registro
+> histórico; su equivalente concreto para el stack vigente (React + Vite +
+> Node/Express + Prisma + PostgreSQL) todavía no está definido — ver
+> [doc 06](06-decisiones-abiertas.md) y [AI-DECISIONS.md](../AI-DECISIONS.md) (AID-006).
+
 Los tres pilares que pide el enunciado, y cómo se materializan acá:
 
 ### Elasticidad
